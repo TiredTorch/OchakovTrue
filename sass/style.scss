@@ -1,0 +1,339 @@
+@import "__nullStyle.scss";
+@import "__slick.scss";
+@import "__slick-theme.scss";
+@import "__variables.scss";
+
+html{
+    font-family: $mainFont;
+    background-color: $SSColor;
+}
+.cards{
+    position: absolute;
+    z-index: 100;
+}
+button{
+    background-color: $SSColor;
+    color: $SFColor;
+    border: .5vh solid $SFColor;
+    width: 15vw;
+    height: 10vh;
+    font-size: $regularFS;
+    font-family: $mainFont;
+    transition: all .3s;
+
+    &:hover{
+        background-color: $SFColor;
+        border: .5vh solid $SSColor;
+        color: $SSColor;
+
+        transition: all .3s;
+
+    }
+}
+
+header{
+    z-index: 1000;
+    position: fixed;
+    width: 100vw;
+    height: 8vh;
+    background-color: $MSColor;
+
+    padding: 0.5vh 1vw;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+    img{
+        height: 90%;
+        width: 8%;
+        min-width: 100px;
+
+        object-fit: fill;
+    }
+    .header__wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        a{
+            font-size: $titleFS;
+            margin-right: 4vw;
+            margin-top: 1%;
+
+            color: $SSColor;
+            transition: all .3s;
+            &:hover{
+                color: $SFColor;
+                transition: all .3s;
+            }
+            &::after{
+                margin-top: 1vh;
+                display: block;
+                width: 100%;
+                margin: 1vh auto;
+                height: 2px;
+                content: '';
+                background: $SSColor;
+            }
+        }
+    }
+}
+section{
+    &.banner{
+        background: url(../img/header_bg.jpg);
+        width: 100vw - 0.86vw;
+        height: 80vh;
+
+        background-size: cover;
+
+        .greetings{
+            font-size: $largetitleFS;
+            padding: 12vh 2vw;
+            color: $SFColor;
+        }
+
+        .cards{
+            top: 60vh;
+
+            display: flex;
+            flex-wrap: wrap;
+            .card{
+                box-shadow: 6px 6px 10px  black;
+                background-color: $MFColor;
+                width: 18vw;
+                height: 25vh;
+                margin-left: 18vw;
+                padding: 1vw 1vh;
+
+                color: $SSColor;
+                h3{
+                    font-size: $titleFS;
+                    text-align: center;
+                }
+                p{
+                    margin-top: 1vh;
+                    font-size: $regularFS;
+                }
+
+                &:first-child{
+                    margin-top: 10vh;
+                    margin-left: 20vw;
+                }
+            }
+        }
+    }
+    &.descriptions{
+        font-style: italic;
+        width: 65%;
+        margin: auto;
+        margin-top: 25vh;
+        color: $SFColor;
+        h3{
+            font-weight: 700;
+            text-align: center;
+            font-size: $titleFS;
+            margin-bottom: 2vh;
+        }
+        p{
+            font-size: $regularFS;
+            line-height: 4vh;
+        }
+        &::after{
+            margin-top: 1vh;
+            display: block;
+            width: 100%;
+            height: 2px;
+            content: '';
+            background: $SFColor;
+        }
+    }
+    &.advantages{   
+        padding: 1.5vh 0;
+        margin-top: 5vh;
+        width: 100%;
+        background-color: $MFColor;
+        display: flex;
+        flex-direction: column;
+        h3{
+            color: $SSColor;
+            width: 100%;
+            margin: 2vh 0;
+            text-align: center;
+            font-size: $titleFS;
+            &::after{
+                margin-top: 1vh;
+                display: block;
+                width: 30%;
+                margin: 1vh auto;
+                height: 2px;
+                content: '';
+                background: $SSColor;
+            }
+        }
+        .wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            width: 100%;
+            .wrapper__item{
+                border-radius:  50% 20% / 10% 40%;
+                margin: 1vh 0;
+                background-color: $SSColor;
+                width: 30%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                padding: 2vh 1vw;
+                img{
+                    width: 30%;
+                    border-radius:  50%;
+                }
+                p{
+                    width: 60%;
+                    font-size: $regularFS;
+                }
+            }
+        }
+    }
+    &.numbers{
+        margin: auto;
+        margin-top: 5vh;
+        width: 90%;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .slider{
+            width: 45%;
+            h3{
+                font-size: $titleFS;
+                
+            }
+            .rooms{
+                margin-top: 5vh;
+                .room{
+                    height: 76vh;
+                                           
+                    .text{
+                        color: $SFColor;
+                        width: 14.05%;
+                        height: 20vh;
+                        background-color: #3194d6a8;
+                        position: absolute;
+                        bottom: 0;
+                        padding: 1vh;
+                        p{
+                            font-size: $titleFS;
+                        }
+                        button{
+                            position: absolute;
+                            bottom: 2vh;
+                            right: 5%;
+                        }
+                    }
+                }
+            }
+        }
+        .preview{
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+
+            img{
+                box-shadow: 6px 6px 10px  black;
+                border-radius: 40% 10% / 20% 30%;
+                border: 1vh solid $MFColor;
+                margin-bottom: 5vh;
+                width: 80%;
+                height: 23vh;
+            }
+        }
+    }
+    &.gallery{
+        padding: 5vh 0;
+        width: 100%;
+        background-color: $MFColor;
+        h3{
+            padding-top: 3vh;
+            font-size: $titleFS;
+            text-align: center;
+            margin-bottom: 5vh;
+            color: $SSColor;
+            &::after{
+                margin-top: 1vh;
+                display: block;
+                width: 30%;
+                margin: 1vh auto;
+                height: 2px;
+                content: '';
+                background: $SSColor;
+            }
+        }
+        .gallery__wrapper{
+            img{
+                display: block !important;
+                margin: auto !important;
+                width: 90% !important;
+                height: 40vh;
+                
+
+                border: 1px solid black;
+                
+                &:focus{
+                    outline: none !important;
+                }
+                &:active{
+                    outline: none !important;
+                }
+            }
+            
+        }
+        button{
+            margin-top: 2vh;
+            width: 30%;
+            margin-left: 35%;
+        }
+        
+    }
+    &.map{
+        margin-top: 20vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .description{
+            padding: 2%;
+            width: 26%;
+            background-color: $MFColor;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            img{
+
+                width: 5vw;
+                height: 5vh;
+            }
+            p{
+                color: $SSColor;
+                width: 80%;
+                font-size: $regularFS;
+            }
+            button{
+                margin: auto;
+            }
+
+        }
+        .position{
+            width: 70%;
+        }
+    }
+}
+footer{
+    background-color: $MSColor;
+    width: 90%;
+    padding: 2% 5%;
+}
